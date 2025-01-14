@@ -35,6 +35,19 @@
         </field>
     </record>
 
+    <!-- fajaracademy.course search view -->
+    <record id="fajaracademy_course_view_search" model="ir.ui.view">
+        <field name="name">fajaracademy.course.view.search</field>
+        <field name="model">fajaracademy.course</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="description"/>
+            </search>
+        </field>
+    </record>
+
     <!-- fajaracademy.course action window -->
     <record id="fajaracademy_course_action" model="ir.actions.act_window">
         <field name="name">Course</field>
