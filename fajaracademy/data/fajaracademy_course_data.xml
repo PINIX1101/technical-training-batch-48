@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="fajaracademy_course_data_odoo17" model="fajaracademy.course">
+        <field name="name">Course Odoo 17</field>
+        <field name="description">Course Odoo 17 with DCT</field>
+    </record>
+
+    <record id="fajaracademy_course_data_reactjs" model="fajaracademy.course">
+        <field name="name">Course React JS</field>
+        <field name="description">Course React JS with DCT</field>
+    </record>
+
+</odoo>
