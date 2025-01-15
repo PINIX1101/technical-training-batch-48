@@ -28,6 +28,7 @@ An Education Module
         'views/menu_views.xml',
         'views/fajaracademy_course.xml',
         'views/fajaracademy_session.xml',
+        'views/res_partner.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
