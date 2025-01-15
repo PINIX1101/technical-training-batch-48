@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- fajaracademy.session tree view -->
+    <record id="fajaracademy_session_view_tree" model="ir.ui.view">
+        <field name="name">fajaracademy.session.view.tree</field>
+        <field name="model">fajaracademy.session</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="number_of_seats"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- fajaracademy.session form view -->
+    <record id="fajaracademy_session_view_form" model="ir.ui.view">
+        <field name="name">fajaracademy.session.view.form</field>
+        <field name="model">fajaracademy.session</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="duration"/>
+                        <field name="number_of_seats"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- fajaracademy.session search view -->
+    <record id="fajaracademy_session_view_search" model="ir.ui.view">
+        <field name="name">fajaracademy.session.view.search</field>
+        <field name="model">fajaracademy.session</field>
+        <field name="arch" type="xml">
+            <search string="Search Description">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="duration"/>
+                <field name="number_of_seats"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- fajaracademy.session action window -->
+    <record id="fajaracademy_session_action" model="ir.actions.act_window">
+        <field name="name">Session</field>
+        <field name="res_model">fajaracademy.session</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="fajaracademy_session_menu_act" name="Session" parent="fajaracademy_menu_root" action="fajaracademy_session_action" sequence="20"/>
+
+</odoo>
