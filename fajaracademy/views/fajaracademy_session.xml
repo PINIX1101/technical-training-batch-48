@@ -9,6 +9,8 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="instructor_id"/>
+                <field name="course_id"/>
                 <field name="start_date"/>
                 <field name="duration"/>
                 <field name="number_of_seats"/>
@@ -26,10 +28,17 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
+                        <field name="instructor_id"/>
+                        <field name="course_id"/>
                         <field name="start_date"/>
                         <field name="duration"/>
                         <field name="number_of_seats"/>
                     </group>
+                    <notebook>
+                        <page name="attendees" string="Attendees">
+                            <field name="attendees_ids"/>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

@@ -9,6 +9,7 @@
             <tree>
                 <!-- Add your fields here -->
                 <field name="name"/>
+                <field name="responsible_user_id"/>
                 <field name="description"/>
             </tree>
         </field>
@@ -24,10 +25,14 @@
                     <group>
                         <!-- Add your fields here -->
                         <field name="name"/>
+                        <field name="responsible_user_id"/>
                     </group>
                     <notebook>
                         <page name="description" string="Description">
                             <field name="description"/>
+                        </page>
+                        <page name="session_ids" string="Session">
+                            <field name="session_ids"/>
                         </page>
                     </notebook>
                 </sheet>
