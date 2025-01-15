@@ -12,3 +12,17 @@ class FajaracademySession(models.Model):
     instructor_id = fields.Many2one('res.partner', string='Instructor')
     course_id = fields.Many2one('fajaracademy.course', string='Course', required=True)
     attendees_ids = fields.Many2many('res.partner', string='Attendees')
+    state = fields.Selection([
+        ('draft', 'Draft'),
+        ('running', 'Running'),
+        ('done', 'Done'),
+    ], string='State', default='draft')
+
+    def action_confirm(self):
+        self.state = 'running'
+
+    def action_done(self):
+        self.state = 'done'
+
+    def action_draft(self):
+        self.state = 'draft'

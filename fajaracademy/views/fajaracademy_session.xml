@@ -24,15 +24,29 @@
         <field name="model">fajaracademy.session</field>
         <field name="arch" type="xml">
             <form string="">
+                <header>
+                    <button string="Confirm" name="action_confirm" invisible="state != 'draft'" type="object" class="oe_highlight"/>
+                    <button string="Mark as Done" name="action_done" invisible="state != 'running'" type="object" class="oe_highlight"/>
+                    <button string="Set to Draft" name="action_draft" invisible="state not in ['running', 'done']" type="object" class="oe_highlight"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
                 <sheet>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Name" />
+                        <h1><field name="name" /></h1>
+                    </div>
+                    
                     <group>
+                        <group>
+                            <field name="instructor_id"/>
+                            <field name="course_id"/>
+                        </group>
                         <!-- Add your fields here -->
-                        <field name="name"/>
-                        <field name="instructor_id"/>
-                        <field name="course_id"/>
-                        <field name="start_date"/>
-                        <field name="duration"/>
-                        <field name="number_of_seats"/>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="duration"/>
+                            <field name="number_of_seats"/>
+                        </group>
                     </group>
                     <notebook>
                         <page name="attendees" string="Attendees">
