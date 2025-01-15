@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fajaracademy_course,fajaracademy.course,model_fajaracademy_course,,1,1,1,1
 access_fajaracademy_session,fajaracademy.session,model_fajaracademy_session,,1,1,1,1
+access_partner_categories,partner.categories,model_partner_categories,,1,1,1,1

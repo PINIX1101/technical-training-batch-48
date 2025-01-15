@@ -18,7 +18,7 @@ An Education Module
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','contacts'],
 
     # always loaded
     'data': [
@@ -29,6 +29,7 @@ An Education Module
         'views/fajaracademy_course.xml',
         'views/fajaracademy_session.xml',
         'views/res_partner.xml',
+        'views/partner_categories.xml',
         'views/views.xml',
         'views/templates.xml',
     ],
