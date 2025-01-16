@@ -22,6 +22,12 @@ class FajaracademySession(models.Model):
     active = fields.Boolean('Active', default=True)
     taken_seats = fields.Float(compute='_compute_taken_seats', string='Taken Seats')
     stop_date = fields.Date(compute='_compute_stop_date', string='Stop Date', store=True)
+    number_of_attendees = fields.Float(compute='_compute_number_of_attendees', string='Number of Attendees', store=True)
+    
+    @api.depends('attendees_ids')
+    def _compute_number_of_attendees(self):
+        for rec in self:
+            rec.number_of_attendees = len(rec.attendees_ids)
     
     @api.depends('start_date','duration')
     def _compute_stop_date(self):

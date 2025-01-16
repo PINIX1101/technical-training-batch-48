@@ -93,6 +93,19 @@
         </field>
     </record>
 
+    <!-- fajaracademy.session graph view -->
+    <record id="fajaracademy_session_view_graph" model="ir.ui.view">
+        <field name="name">fajaracademy.session.view.graph</field>
+        <field name="model">fajaracademy.session</field>
+        <field name="arch" type="xml">
+            <graph string="Session">
+                <!-- Add your fields here -->
+                <field name="course_id"/>
+                <field name="number_of_attendees" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <!-- fajaracademy.session search view -->
     <record id="fajaracademy_session_view_search" model="ir.ui.view">
         <field name="name">fajaracademy.session.view.search</field>
@@ -112,7 +125,7 @@
     <record id="fajaracademy_session_action" model="ir.actions.act_window">
         <field name="name">Session</field>
         <field name="res_model">fajaracademy.session</field>
-        <field name="view_mode">tree,form,calendar,gantt</field>
+        <field name="view_mode">tree,form,calendar,gantt,graph</field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
