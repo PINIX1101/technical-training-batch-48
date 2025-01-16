@@ -19,6 +19,24 @@ class FajaracademySession(models.Model):
     ], string='State', default='draft')
     active = fields.Boolean('Active', default=True)
     taken_seats = fields.Float(compute='_compute_taken_seats', string='Taken Seats')
+
+    @api.onchange('number_of_seats','attendees_ids')
+    def _onchange_seats_warning(self):
+        if self.number_of_seats < 0:
+            return {
+                'warning': {
+                    'title': 'Invalid Number for Seats',
+                    'message': 'Number of Seats Cannot be Negative'
+                }
+            }
+        
+        if len(self.attendees_ids) > self.number_of_seats:
+            return {
+                'warning': {
+                    'title': 'Overload Capacity in Session',
+                    'message': 'Number of Attendees more than Number of Seats'
+                }
+            }
     
     @api.depends('number_of_seats', 'attendees_ids')
     def _compute_taken_seats(self):
