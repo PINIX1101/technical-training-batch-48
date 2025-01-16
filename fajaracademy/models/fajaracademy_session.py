@@ -1,5 +1,6 @@
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+from dateutil.relativedelta import relativedelta
 
 
 class FajaracademySession(models.Model):
@@ -20,6 +21,12 @@ class FajaracademySession(models.Model):
     ], string='State', default='draft')
     active = fields.Boolean('Active', default=True)
     taken_seats = fields.Float(compute='_compute_taken_seats', string='Taken Seats')
+    stop_date = fields.Date(compute='_compute_stop_date', string='Stop Date', store=True)
+    
+    @api.depends('start_date','duration')
+    def _compute_stop_date(self):
+        for rec in self:
+            rec.stop_date = rec.start_date + relativedelta(days=+rec.duration)
 
     @api.constrains('attendees_ids','instructor_id')
     def _constrains_participants(self):
