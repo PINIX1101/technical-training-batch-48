@@ -15,4 +15,15 @@
         <field name="category_id" ref='fajaracademy.module_category_fajaracademy'/>
     </record>
 
+    <record id="only_responsible_can_edit" model="ir.rule">
+        <field name="name">Only Responsible User can Edit</field>
+        <field name="model_id" ref='fajaracademy.model_fajaracademy_course'></field>
+        <field name="groups" eval="[(4, ref('fajaracademy.group_manager'))]"></field>
+        <field name="perm_read" eval="0"></field>
+        <field name="perm_write" eval="1"></field>
+        <field name="perm_create" eval="0"></field>
+        <field name="perm_unlink" eval="1"></field>
+        <field name="domain_force">['|',('responsible_user_id','=',user.id),('responsible_user_id','=',False)]</field>
+    </record>
+
 </odoo>
