@@ -53,7 +53,13 @@
                     </group>
                     <notebook>
                         <page name="attendees" string="Attendees">
-                            <field name="attendees_ids"/>
+                            <field name="attendees_ids">
+                                <tree>
+                                    <field name="complete_name" string="Name"/>
+                                    <field name="phone"/>
+                                    <field name="email"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
