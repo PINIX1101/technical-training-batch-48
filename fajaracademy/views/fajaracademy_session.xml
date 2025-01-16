@@ -67,6 +67,19 @@
         </field>
     </record>
 
+    <!-- fajaracademy.session calendar view -->
+    <record id="fajaracademy_session_view_calendar" model="ir.ui.view">
+        <field name="name">fajaracademy.session.view.calendar</field>
+        <field name="model">fajaracademy.session</field>
+        <field name="arch" type="xml">
+            <calendar string="Session" date_start="start_date" color="instructor_id">
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="instructor_id"/>
+            </calendar>
+        </field>
+    </record>
+
     <!-- fajaracademy.session search view -->
     <record id="fajaracademy_session_view_search" model="ir.ui.view">
         <field name="name">fajaracademy.session.view.search</field>
@@ -86,7 +99,7 @@
     <record id="fajaracademy_session_action" model="ir.actions.act_window">
         <field name="name">Session</field>
         <field name="res_model">fajaracademy.session</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,calendar</field>
     </record>
 
     <!-- This Menu Item must have a parent and an action -->
