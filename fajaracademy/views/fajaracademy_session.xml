@@ -27,9 +27,9 @@
         <field name="arch" type="xml">
             <form string="">
                 <header>
-                    <button string="Confirm" name="action_confirm" invisible="state != 'draft'" type="object" class="oe_highlight"/>
-                    <button string="Mark as Done" name="action_done" invisible="state != 'running'" type="object" class="oe_highlight"/>
-                    <button string="Set to Draft" name="action_draft" invisible="state not in ['running', 'done']" type="object" class="oe_highlight"/>
+                    <button string="Confirm" name="action_confirm" invisible="state != 'draft'" type="object" class="oe_highlight" groups="fajaracademy.group_manager"/>
+                    <button string="Mark as Done" name="action_done" invisible="state != 'running'" type="object" class="oe_highlight" groups="fajaracademy.group_manager"/>
+                    <button string="Set to Draft" name="action_draft" invisible="state not in ['running', 'done']" type="object" class="oe_highlight" groups="fajaracademy.group_manager"/>
                     <field name="state" widget="statusbar"/>
                 </header>
                 <sheet>

@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_fajaracademy_course,fajaracademy.course,model_fajaracademy_course,,1,1,1,1
-access_fajaracademy_session,fajaracademy.session,model_fajaracademy_session,,1,1,1,1
-access_partner_categories,partner.categories,model_partner_categories,,1,1,1,1
+access_fajaracademy_course_manager,fajaracademy.course.manager,model_fajaracademy_course,fajaracademy.group_manager,1,1,1,1
+access_fajaracademy_session_manager,fajaracademy.session.manager,model_fajaracademy_session,fajaracademy.group_manager,1,1,1,1
+access_partner_categories_manager,partner.categories.manager,model_partner_categories,fajaracademy.group_manager,1,1,1,1
+
+access_fajaracademy_course_user,fajaracademy.course.user,model_fajaracademy_course,fajaracademy.group_user,1,0,0,0
+access_fajaracademy_session_user,fajaracademy.session.user,model_fajaracademy_session,fajaracademy.group_user,1,0,0,0
+access_partner_categories_user,partner.categories.user,model_partner_categories,fajaracademy.group_user,1,0,0,0
