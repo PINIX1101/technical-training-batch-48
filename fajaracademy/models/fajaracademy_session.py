@@ -18,6 +18,15 @@ class FajaracademySession(models.Model):
         ('done', 'Done'),
     ], string='State', default='draft')
     active = fields.Boolean('Active', default=True)
+    taken_seats = fields.Float(compute='_compute_taken_seats', string='Taken Seats')
+    
+    @api.depends('number_of_seats', 'attendees_ids')
+    def _compute_taken_seats(self):
+        for rec in self:
+            if rec.number_of_seats:
+                rec.taken_seats = len(rec.attendees_ids)/rec.number_of_seats*100
+            else:
+                rec.taken_seats = 0
 
     def action_confirm(self):
         self.state = 'running'
