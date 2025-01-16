@@ -6,7 +6,7 @@ class FajaracademySession(models.Model):
     _description = 'Fajaracademy Session'
 
     name = fields.Char('Name')
-    start_date = fields.Date('Start Date')
+    start_date = fields.Date('Start Date',default=fields.Date.today())
     duration = fields.Float('Duration')
     number_of_seats = fields.Float('Number of Seats')
     instructor_id = fields.Many2one('res.partner', string='Instructor', domain="['|',('is_instructor','=',True),('partner_category_id','!=',False)]")
@@ -17,6 +17,7 @@ class FajaracademySession(models.Model):
         ('running', 'Running'),
         ('done', 'Done'),
     ], string='State', default='draft')
+    active = fields.Boolean('Active', default=True)
 
     def action_confirm(self):
         self.state = 'running'
