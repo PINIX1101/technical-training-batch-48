@@ -6,7 +6,7 @@
         <field name="name">fajaracademy.session.view.tree</field>
         <field name="model">fajaracademy.session</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree decoration-info="duration &lt; 5" decoration-danger="duration &gt; 15">
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="instructor_id"/>
