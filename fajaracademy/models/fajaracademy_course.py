@@ -13,3 +13,17 @@ class FajaracademyCourse(models.Model):
     description = fields.Text('Description')
     responsible_user_id = fields.Many2one('res.users', string='Responsible User')
     session_ids = fields.One2many('fajaracademy.session', 'course_id', string='Session')
+
+    def copy(self, default=None):
+        default_data = dict(default or {})
+
+        count = self.search_count([('name','=like','Copy of {}%'.format(self.name))])
+
+        if not count:
+            name = 'Copy of {}'.format(self.name)
+        else:
+            name = 'Copy of {} ({})'.format(self.name, count)
+
+        default_data['name'] = name
+        return super(FajaracademyCourse, self).copy(default_data)
+        
