@@ -1,4 +1,5 @@
 from odoo import _, api, fields, models
+from odoo.exceptions import ValidationError
 
 
 class FajaracademySession(models.Model):
@@ -19,6 +20,12 @@ class FajaracademySession(models.Model):
     ], string='State', default='draft')
     active = fields.Boolean('Active', default=True)
     taken_seats = fields.Float(compute='_compute_taken_seats', string='Taken Seats')
+
+    @api.constrains('attendees_ids','instructor_id')
+    def _constrains_participants(self):
+        for rec in self:
+            if rec.instructor_id in rec.attendees_ids:
+                raise ValidationError('Instructor cannot be Attendees')
 
     @api.onchange('number_of_seats','attendees_ids')
     def _onchange_seats_warning(self):

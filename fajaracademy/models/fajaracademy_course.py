@@ -4,6 +4,10 @@ from odoo import _, api, fields, models
 class FajaracademyCourse(models.Model):
     _name = 'fajaracademy.course'
     _description = 'Fajaracademy Course'
+    _sql_constraints = [
+        ("name_description_check", "check(name != description)", "Name cannot be same as Description"),
+        ("name_unique", "unique(name)", "Name must be Unique"),
+    ]
 
     name = fields.Char('Title', required=True)
     description = fields.Text('Description')
