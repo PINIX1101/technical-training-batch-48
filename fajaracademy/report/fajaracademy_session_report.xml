@@ -30,10 +30,12 @@
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="o">
                 <t t-call="web.basic_layout">
-                    <div class="page">
+                    <div class="header">
                         <div class="text-center h1"><t t-esc="o.name"/></div>
                         <div class="h3">Start Date: <t t-esc="o.start_date.strftime('%d/%m/%Y')"/></div>
                         <div class="h3">End Date: <t t-esc="o.stop_date.strftime('%d/%m/%Y')"/></div>
+                    </div>
+                    <div class="page">
                         <t t-call="fajaracademy.template_table"/>
                     </div>
                 </t>
