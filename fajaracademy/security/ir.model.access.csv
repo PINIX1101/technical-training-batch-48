@@ -6,3 +6,5 @@ access_partner_categories_manager,partner.categories.manager,model_partner_categ
 access_fajaracademy_course_user,fajaracademy.course.user,model_fajaracademy_course,fajaracademy.group_user,1,0,0,0
 access_fajaracademy_session_user,fajaracademy.session.user,model_fajaracademy_session,fajaracademy.group_user,1,0,0,0
 access_partner_categories_user,partner.categories.user,model_partner_categories,fajaracademy.group_user,1,0,0,0
+
+access_add_session_attendees_wizard,add.session.attendees.wizard,model_add_session_attendees_wizard,,1,1,1,1
