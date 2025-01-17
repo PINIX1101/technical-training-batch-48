@@ -36,6 +36,8 @@ An Education Module
         'views/partner_categories.xml',
         'views/views.xml',
         'views/templates.xml',
+
+        'report/fajaracademy_session_report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
